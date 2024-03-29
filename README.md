@@ -7,7 +7,7 @@ SOFTWARE LICENSE AGREEMENT FOR KAMIWAZA COMMUNITY EDITION
 
 IMPORTANT: BY INSTALLING, COPYING, OR OTHERWISE USING THE KAMIWAZA COMMUNITY EDITION SOFTWARE, YOU AGREE TO BE BOUND BY THE TERMS OF THIS LICENSE AGREEMENT. IF YOU DO NOT AGREE TO THE TERMS OF THIS LICENSE AGREEMENT, DO NOT INSTALL, COPY, OR USE THE SOFTWARE.
 
-1. LICENSE GRANT: [Your Company Name] ("Licensor") hereby grants you a non-exclusive, non-transferable, license to use the KAMIWAZA Community Edition software ("Software") solely for your personal or internal business purposes. This License does not allow you to use the Software on any system with which you charge for the Software's use or for the use of the Software's functionalities.
+1. LICENSE GRANT: Kamiwaza.AI ("Licensor") hereby grants you a non-exclusive, non-transferable, license to use the KAMIWAZA Community Edition software ("Software") solely for your personal or internal business purposes. This License does not allow you to use the Software on any system with which you charge for the Software's use or for the use of the Software's functionalities.
 
 2. RESTRICTIONS: You may not reverse engineer, decompile, or disassemble the Software, except and only to the extent that such activity is expressly permitted by applicable law notwithstanding this limitation. You may not rent, lease, loan, sublicense, or distribute the Software or any portion thereof. You may not make any copies of the Software, except for the purpose of backup or archival purposes.
 
