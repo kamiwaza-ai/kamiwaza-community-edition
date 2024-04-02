@@ -6,6 +6,35 @@ See license at the bototm.
 
 Join our discord to discuss, ask questions, get help: https://discord.gg/cVGBS5rD2U
 
+# Quick Intro
+
+Kamiwaza is a GenAI stack focused on two key technologies to enable Enterprise AI Anywhere: the **Distributed Data Engine** and **Inference Mesh**. This provides locality-aware data ops for RAG and scalable inference. But we are developers first, so we have built tools and are eager to drive a more seamless developer experience. The philosophy of Kamiwaza is:
+
+*Opinionated, but loosely coupled*
+
+Community edition now includes:
+
+- [x] A local model repository that is API-accessible, allowing you to build applications around models and deployments of models (and for the Enterprise, you get an "artifactory for models")
+- [x] A catalog, with the ability to ingest data easily from file or object, with credential management
+- [x] Middleware for embeddings and vector database access, with neat features like model-aware chunking and automatic offset tracking to enable byte-range retrieval
+- [x] Cluster awareness and resource management: Community edition runs roughly the same on OSX and Linux, giving you an ability to develop on a Mac but deploy on large Linux clusters (OSX is single-node only!)
+- [x] A React UI
+- [x] a robust set of REST APIs
+- [x] A Jupyter environment ready to go with a handful of sample notebooks that show ingestion, retrieval, embedding and vector ops, model deployment and inferencing
+- [x] a lot of developer middleware, especially around data ingestion, retrieval, model management and deployment, and more
+- [x] Loose coupling; everything is built with a level of abstraction and fungibility in mind
+- [x] Deploys a full integrated stack, so you get all the Kamiwaza goodness, along with a model engine (llamacpp/vLLM), a catalog (Acryl Datahub), using versions we've evaluated with our stack
+
+We have a lot more cool things coming in both the community edition and the enterprise edition [hello@kamiwaza.ai](mailto:hello@kamiwaza.ai) if you'd like to know more about that!)
+
+Enterprise edition adds:
+* The ability to deploy and scale many models across an arbitrary number of hosts
+* Integration with SAML and OAuth and more fine-grained control over identity and access
+* Multi-location awareness with data locality affinity (in other words, you can construct things like prompt chains where the inferencing is local to the data)
+
+
+
+
 # Kamiwaza Release Notes
 
 These will be deprecated in a later version when we release the docs engine.
