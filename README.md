@@ -4,7 +4,7 @@ See license at the bototm.
 
 # Discord
 
-Join our discord to discuss, ask questios, get help: https://discord.gg/cVGBS5rD2U
+Join our discord to discuss, ask questions, get help: https://discord.gg/cVGBS5rD2U
 
 # Kamiwaza Release Notes
 
