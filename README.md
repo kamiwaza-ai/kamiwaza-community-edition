@@ -2,6 +2,10 @@
 
 See license at the bototm.
 
+# Discord
+
+Join our discord to discuss, ask questios, get help: https://discord.gg/cVGBS5rD2U
+
 # Kamiwaza Release Notes
 
 These will be deprecated in a later version when we release the docs engine.
