@@ -7,6 +7,7 @@ See license at the bottom.
 ## Raw Download Links
 
 [0.2.0 OSX](https://github.com/kamiwaza-ai/kamiwaza-community-edition/raw/5b6b9af11d4f8a054ed1c22c8c027e5f49cfb946/kamiwaza-community-0.2.0-osx.tar.gz)
+
 [0.2.0 Linux](https://github.com/kamiwaza-ai/kamiwaza-community-edition/raw/5b6b9af11d4f8a054ed1c22c8c027e5f49cfb946/kamiwaza-community-0.2.0-UbuntuLinux.tar.gz)
 
 ## Discord
