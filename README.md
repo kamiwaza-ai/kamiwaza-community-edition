@@ -2,7 +2,7 @@
 
 ## License
 
-See license at the bototm.
+See license at the bottom.
 
 ## Discord
 
