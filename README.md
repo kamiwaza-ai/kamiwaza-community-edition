@@ -18,6 +18,10 @@ Join our discord to discuss, ask questions, get help: https://discord.gg/cVGBS5r
 
 Want pictures? Check the [showcase](showcase.md)!
 
+## Full Installation Instructions
+
+We now have [full installation instructions](INSTALL.md) for the Kamiwaza Community Edition for Linux that go step-by-step from a fresh system for every pre-requisite.
+
 ## Quick Intro
 
 Kamiwaza is a GenAI stack focused on two key technologies to enable Enterprise AI Anywhere: the **Distributed Data Engine** and **Inference Mesh**. This provides locality-aware data ops for RAG and scalable inference. But we are developers first, so we have built tools and are eager to drive a more seamless developer experience. The philosophy of Kamiwaza is:
