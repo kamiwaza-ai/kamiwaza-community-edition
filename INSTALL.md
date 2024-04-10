@@ -2,6 +2,10 @@
 
 This document outlines the steps to install Kamiwaza on a vanilla Ubuntu 22.04LTS server. The instructions are tested against a fresh Azure Ubuntu 22.04LTS Server (not Minimal) instance, and are intended to be executed on a fresh system.
 
+## Discord
+
+This thread originated from our discord on our #community-edition-support channel. Join us to discuss, ask questions, get help: <https://discord.gg/cVGBS5rD2U>
+
 ## Pre-requisites
 
 - Ubuntu 22.04LTS Server image
@@ -137,18 +141,23 @@ This document outlines the steps to install Kamiwaza on a vanilla Ubuntu 22.04LT
 
 ### Verification
 
-1. After launching, verify the installation by accessing the URLs provided by the Kamiwaza services, typically displayed in the terminal.
+1. After launching, verify the installation by accessing the URLs provided by the Kamiwaza services.
+
+- Frontend: http://n.n.n.n:3000
+- Primary REST: http://n.n.n.n:7777
+- Notebooks: http://n.n.n.n:8888
+
+**Note that of course you may need to open those ports in your security group, firewall, or equivalent.**
+
+Also, **Note that Kamiwaza community edition is not authenticated and should not be enabled except on a private network** (for now)
 
 ## Troubleshooting
 
-- Ensure all pre-requisites are met and that your system is compatible with the software requirements.
 - For issues related to secure boot and MOK enrollment, refer to the system documentation for guidance.
-- Docker permission issues can be resolved by ensuring the user is added to the `docker` group and logging back in.
-- For specific errors during the installation of Kamiwaza or its dependencies, consult the official documentation or support channels.
+- Mentioned in the doc, but remember to log out/in after adding to the docker group
 
 ## Additional Notes
 
 - This guide assumes a clean installation of Ubuntu 22.04LTS and administrative (sudo) privileges.
 - Always verify the compatibility of drivers and software versions with your hardware and operating system.
 - The installation steps and scripts provided by Kamiwaza are designed to streamline the setup process but always review each command for your specific environment.
-
