@@ -117,7 +117,10 @@ This thread originated from our discord on our #community-edition-support channe
 
 ### Starting Kamiwaza Services
 
-1. To launch the Kamiwaza services, use the provided scripts and commands in separate terminal sessions:
+1. To launch the Kamiwaza services, use the provided scripts and commands in separate terminal sessions or screen. If you are not using screen, you may want to add `nohup` to the commands, eg, `nohup python launch.py > kamiwaza.log 2>&1 &`
+
+    Each of these is meant to be run in the install folder where you untarred Kamiwaza. (i.e., `cd ~/kamiwaza`)
+
     - Frontend:
 
         ```bash
