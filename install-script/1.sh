@@ -8,6 +8,10 @@ sudo apt upgrade -y
 # Install Python 3.10 and necessary libraries
 sudo apt install -y python3.10 python3.10-dev libpython3.10-dev python3.10-venv
 
+# for 0.3.0
+#sudo apt install -y python3.10 python3.10-dev libpython3.10-dev python3.10-venv golang-cfssl
+
+
 # Install NVM and Node.js
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
