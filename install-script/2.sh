@@ -6,12 +6,21 @@ sudo apt-get install -y nvidia-container-toolkit
 sudo apt install -y nvidia-docker2
 sudo systemctl restart docker
 sudo usermod -aG docker $USER
-newgrp docker
 
-# Prompt for logout and login to apply group changes
-if [[ -z "${KAMIWAZA_INSTALL_UNATTENDED}" ]]; then
-    read -p "Please log out and log back in for the group changes to take effect. Run script 3.sh after that."
+# Check if docker group is applied
+if groups | grep -q '\bdocker\b'; then
+    echo "Docker group is applied already."
+    if [[ -z "${KAMIWAZA_INSTALL_UNATTENDED}" ]]; then
+        echo "Please run script 3.sh to continue the installation."
+    else
+        echo "Unattended mode, running 3.sh..."
+        ./3.sh
+    fi
 else
-    echo "unattended mode, running 3.sh..."
-    ./3.sh
+    if [[ -z "${KAMIWAZA_INSTALL_UNATTENDED}" ]]; then
+        echo "Docker group not applied. Please log out and log back in, then run script 3.sh."
+    else
+        echo "Unattended mode, running 3.sh with sudo..."
+        sudo -g docker ./3.sh
+    fi
 fi
