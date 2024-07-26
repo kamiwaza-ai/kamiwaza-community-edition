@@ -55,7 +55,7 @@ Enterprise edition adds:
 
 These will be deprecated in a later version when we release the docs engine.
 
-### 0.2.0
+### 0.3.0
 
 #### Installing
 
