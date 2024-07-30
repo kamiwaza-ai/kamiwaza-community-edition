@@ -4,7 +4,7 @@ docker run --rm --gpus all nvidia/cuda:12.4.1-runtime-ubuntu22.04 nvidia-smi
 # Download and install Kamiwaza
 mkdir kamiwaza
 cd kamiwaza
-wget https://github.com/kamiwaza-ai/kamiwaza-community-edition/raw/main/kamiwaza-community-0.2.0-pl1-UbuntuLinux.tar.gz
+wget https://github.com/kamiwaza-ai/kamiwaza-community-edition/blob/main/kamiwaza-community-0.3.0-UbuntuLinux.tar.gz
 tar -xvf kamiwaza-community-0.2.0-pl1-UbuntuLinux.tar.gz
 bash install.sh
 
