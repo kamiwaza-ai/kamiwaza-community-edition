@@ -6,9 +6,9 @@ See license at the bottom.
 
 ## Raw Download Links
 
-[0.2.0 OSX](https://github.com/kamiwaza-ai/kamiwaza-community-edition/raw/5b6b9af11d4f8a054ed1c22c8c027e5f49cfb946/kamiwaza-community-0.2.0-osx.tar.gz)
+[0.3.0 OSX](https://github.com/kamiwaza-ai/kamiwaza-community-edition/raw/main/kamiwaza-community-0.3.0-osx.tar.gz)
 
-[0.2.0-pl1 Linux](https://github.com/kamiwaza-ai/kamiwaza-community-edition/raw/main/kamiwaza-community-0.2.0-pl1-UbuntuLinux.tar.gz)
+[0.3.0 Linux](https://github.com/kamiwaza-ai/kamiwaza-community-edition/raw/main/kamiwaza-community-0.3.0-UbuntuLinux.tar.gz)
 
 ## Discord
 
@@ -55,7 +55,7 @@ Enterprise edition adds:
 
 These will be deprecated in a later version when we release the docs engine.
 
-### 0.2.0
+### 0.3.0
 
 #### Installing
 
@@ -64,52 +64,44 @@ These will be deprecated in a later version when we release the docs engine.
 2. Read kamiwaza/README.md and ensure the pre-requisites (python 3.10.x, npm/node-21.6, pip, etc) are installed
 3. Run `bash install.sh` from this directory; this should create your venv and perform the rest of the install
 4. If on OSX, run `bash build-llama-cpp.sh` (Even if you run it elsewhere locally, you should do this; Kamiwaza will build a specific commit and use this location) (We'd run this as a container, but Docker OSX doesn't have GPU access yet, which would make for a fairly miserable inferencing experience)
-5. `cd frontend` and `npm install` and `npm start`
 
 #### Running
 
-1. Start kamiwaza venv with `source venv/bin/activate` from the Kamiwaza install folder (where you ran `bash install.sh`)
-2. (Optional) Start ray with `ray start --head`; you can skip this if running locally - expect a heavier amount of logs if you don't
+1. In 0.3.0 you should be able to run `bash start-all.sh` which should launch all of the services; `bash stop-all.sh` should also shut everything down
 
-Then one of:
 
-3. `python launch.py --standalone` to run Kamiwaza without ray running all the time (it will still be enabled for things like Retrieval)
+### New in 0.3.0
 
-**or**
+* Improvements in model config deployment and cluster mode, and cluster mode now usable in community edition (still single-node, but the behavior should match enterprise)
+* Improved UI
+* Production mode React serving
+* Improved cluster management and bootstrapping
+* Significantly improved exception handling for model deployment/shutdown; including a force-stop function that will clear a model if the underlying engine is unavailable to respond to a graceful shutdown
+* Cleanup and improvements in sentencetransformers middleware
+* Added etcd for config management - visible under /cluster/runtime_config endpoint; we deploy on port 12379
+* Added Traefik as a load balancer; Kamiwaza now sports a unified endpoint for all services
+* 80/443 with / being the ui, /api/docs being the swagger docs, /lab/lab for Jupyter lab
+* Deploys with self-signed certificates but you can now replace the certificate with your own (generally /deployment/envs/[env]/kamiwaza-traefik/[amd64|arm64]/certs
+* Support for letsencrypt coming in the future
+* All editions now standardize on Traefik (all hosts) providing a port from 51100-51199 for model deployments, which map to ray.serve endpoints
+* Added 'KAMIWAZA_ENV' setting for startup for containers - advanced use
+* Updated over 50 packages and components, including vLLM (5.1), llamacpp (recent build), cockroachDB, etc.
+* Improved model config management - more fields; fields are now generally all optional and graceful to not being set
+* Many fixes
+* And many more!
 
-3. `python launch.py` (optional `--ray-host=hostname` and `--ray-port=port` if you are launching additional nodes, to point at the IP of the head node)
-
-(You can redirect also and background, as in `python launch.py --standalone > kamiwaza.log 2>&1 &`)
-
-Then:
-
-4. `cd frontend` and `npm start` (still debug mode react; and you can run this totally independently of kamiwaza, not that it will do anything on its own; but it isn't required)
-5. If you want notebook services, run `bash restart-or-start-lab.sh`; the url with token will be printed; the notebooks have their own venv with the kamiwaza dependencies pre-installed, but `!pip install` commands in the notebooks will not affect the kamiwaza venv
-
-### New in 0.2.0
-
-* llamacpp build & deploy
-* vllm deploy
-* (both available in REST and models -> model details -> deploy in the UI)
-* model download improvements
-* model downloads are now quantity limited (6 is the default, configurable in the models config file)
-* model config management
-* Newly revamped introductory set of notebooks, 00->06 with a walkthrough
-* Significant updates to Data Engine - improved RetrievalService, IngestionService, DataService, Runners, etc
-* **strongly** recommend trying or reading through the new notebooks as they have more solid ingest/retrieval walkthroughs
-* Auto-offsets are introduced and fully enabled, requirements
 
 ### Known issues
 
-* Model East-West downloads are not functional; recommend a shared filesystem for cluster mode
+* Default vLLM memory usage is not computed correctly and will default to 0.9; set `gpu_memory_utilization` as a config appropriate for your model/system
+* While we have significant updates, Llama-3.1 came out during testing; note that it will generally **not** function, but we will evaluate llamacpp/vLLM updates to support its RoPE config changes in 0.3.1
+* Model East-West downloads are not functional; use a shared filesystem
 * Cannot deploy additional vectorDB instances yet
 * Only BAAI/llm-embedder and BAAI/bge-large-en-v1.5 are tested; and certainly, other embeddings that require instructions will have issues
 * Embedder will not use local models (eg, they will pull from Hf)
 * CORS policy is wide
-* API and UI are not authenticated
+* API and UI are not authenticated - although you can now restrict access to port 80/443 from outside networks as Kamiwaza has load balancing
 * The model search API only supports '*' as a Hub parameter (which is only Hf currently)
-* The `containers-up.sh` script which launches the containers sometimes doesn't wait quite long enough; both cockroachdb and datahub can sometimes take longer to spawn. If you see created containers not running you can re-run that script; it should generally be idempotent
-* Stopping model engines will not remove them in the GUI when the modal disappears until you refresh
 
 
 ## LICENSE
