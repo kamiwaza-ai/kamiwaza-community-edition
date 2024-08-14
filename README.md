@@ -6,9 +6,9 @@ See license at the bottom.
 
 ## Raw Download Links
 
-[0.3.0 OSX](https://github.com/kamiwaza-ai/kamiwaza-community-edition/raw/main/kamiwaza-community-0.3.0-osx.tar.gz)
+[0.3.1 OSX](https://github.com/kamiwaza-ai/kamiwaza-community-edition/raw/main/kamiwaza-community-0.3.1-osx.tar.gz)
 
-[0.3.0 Linux](https://github.com/kamiwaza-ai/kamiwaza-community-edition/raw/main/kamiwaza-community-0.3.0-UbuntuLinux.tar.gz)
+[0.3.1 Linux](https://github.com/kamiwaza-ai/kamiwaza-community-edition/raw/main/kamiwaza-community-0.3.1-UbuntuLinux.tar.gz)
 
 ## Discord
 
