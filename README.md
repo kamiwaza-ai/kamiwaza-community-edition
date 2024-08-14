@@ -55,6 +55,13 @@ Enterprise edition adds:
 
 These will be deprecated in a later version when we release the docs engine.
 
+### 0.3.1
+
+* Enhanced Model Deployment: Added new settings for better control over model deployment, including CPU offloading and custom configuration fields.
+* UI Improvements: Refined the user interface, particularly in the model configuration and deployment sections.
+* Expanded Compatibility: Improved support for additional hardware environments, including Ampere processors.
+* Bug Fixes: Addressed several issues related to container management, model deployment, and configuration handling.
+
 ### 0.3.0
 
 #### Installing
