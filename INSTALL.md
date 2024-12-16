@@ -109,7 +109,7 @@ This thread originated from our discord on our #community-edition-support channe
     cd kamiwaza
     wget <kamiwaza package>
     tar -xvf kamiwaza-community-0.3.2-UbuntuLinux.tar.gz
-    bash install.sh
+    bash install.sh --community
     ```
 
     This script will automatically set up a virtual environment, install the necessary packages, and perform initial configuration.
@@ -118,42 +118,13 @@ This thread originated from our discord on our #community-edition-support channe
 
 ### Starting Kamiwaza Services
 
-1. To launch the Kamiwaza services, use the provided scripts and commands in separate terminal sessions or screen. If you are not using screen, you may want to add `nohup` to the commands, eg, `nohup python launch.py > kamiwaza.log 2>&1 &`
+As of 0.3.2:
 
-    Each of these is meant to be run in the install folder where you untarred Kamiwaza. (i.e., `cd ~/kamiwaza`)
+```bash
+bash startup/kamiwazad.sh start
+```
 
-    - Frontend:
 
-        ```bash
-        cd frontend
-        npm install
-        npm start
-        ```
-
-    - Backend:
-
-        ```bash
-        bash restart-or-start-lab.sh
-        ```
-
-    - Activate the virtual environment and launch the application:
-
-        ```bash
-        source venv/bin/activate
-        python launch.py
-        ```
-
-### Verification
-
-1. After launching, verify the installation by accessing the URLs provided by the Kamiwaza services.
-
-- Frontend: http://n.n.n.n:3000
-- Primary REST: http://n.n.n.n:7777
-- Notebooks: http://n.n.n.n:8888
-
-**Note that of course you may need to open those ports in your security group, firewall, or equivalent.**
-
-Also, **Note that Kamiwaza community edition is not authenticated and should not be enabled except on a private network** (for now)
 
 ## Troubleshooting
 
