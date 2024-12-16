@@ -6,9 +6,9 @@ See license at the bottom.
 
 ## Raw Download Links
 
-[0.3.1 OSX](https://github.com/kamiwaza-ai/kamiwaza-community-edition/raw/main/kamiwaza-community-0.3.1-osx.tar.gz)
+[0.3.1 OSX](https://github.com/kamiwaza-ai/kamiwaza-community-edition/raw/main/kamiwaza-community-0.3.2-osx.tar.gz)
 
-[0.3.1 Linux](https://github.com/kamiwaza-ai/kamiwaza-community-edition/raw/main/kamiwaza-community-0.3.1-UbuntuLinux.tar.gz)
+[0.3.1 Linux](https://github.com/kamiwaza-ai/kamiwaza-community-edition/raw/main/kamiwaza-community-0.3.2-UbuntuLinux.tar.gz)
 
 ## Discord
 
@@ -49,11 +49,27 @@ Enterprise edition adds:
 * Multi-location awareness with data locality affinity (in other words, you can construct things like prompt chains where the inferencing is local to the data)
 
 
-
-
 ## Kamiwaza Community Edition Release Notes
 
 These will be deprecated in a later version when we release the docs engine.
+
+### 0.3.2
+
+* Authentication merged into community edition with JWT enforcement on all endpoints
+* SSL is now required on all endpoints (self-signed certificates are supported)
+* JupyterLab now uses Kamiwaza authentication instead of lab tokens
+* Improved SSL configuration and rotation handling for model endpoints
+* Introduced kamiwazad for one-command startup and systemd deployments
+* Updated to vLLM 0.6.3.post1 and latest llama.cpp on OSX
+* Improved model config autodetection during downloads
+* vLLM model configurations now support all known parameters
+* Enhanced ray service management
+* Better performance for large-batch embeddings in pipelines
+* Aligned recursive behavior between file and object catalog ingestion
+* kamiwazad now manages all services - use 'bash startup/kamiwazad.sh start/status'
+* New lightweight client SDK available at github.com/kamiwaza-ai/kamiwaza-sdk
+* Integrated beautiful new chatbot UI from github.com/m9e/chatbot (thanks Vercel!)
+* Many fixes and improvements
 
 ### 0.3.1
 

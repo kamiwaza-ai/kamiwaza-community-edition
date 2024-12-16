@@ -25,7 +25,7 @@ This thread originated from our discord on our #community-edition-support channe
 2. Install Python 3.10 and necessary libraries:
 
     ```bash
-    sudo apt install -y python3.10 python3.10-dev libpython3.10-dev python3.10-venv
+    sudo apt install -y python3.10 python3.10-dev libpython3.10-dev python3.10-venv golang-cfssl python-is-python3 etcd-client net-tools
     ```
 
 ### Node.js and NVM
@@ -75,6 +75,7 @@ This thread originated from our discord on our #community-edition-support channe
     After reboot, enroll MOK if secure boot is enabled. In azure you would see something like:
 
     ![Secure Boot](images/secureboot.png)
+
 2. Add the NVIDIA Docker repository and install the NVIDIA container toolkit:
 
     ```bash
@@ -106,8 +107,8 @@ This thread originated from our discord on our #community-edition-support channe
     ```bash
     mkdir kamiwaza
     cd kamiwaza
-    wget https://github.com/kamiwaza-ai/kamiwaza-community-edition/raw/5b6b9af11d4f8a054ed1c22c8c027e5f49cfb946/kamiwaza-community-0.2.0-UbuntuLinux.tar.gz
-    tar -xvf kamiwaza-community-0.2.0-UbuntuLinux.tar.gz
+    wget <kamiwaza package>
+    tar -xvf kamiwaza-community-0.3.2-UbuntuLinux.tar.gz
     bash install.sh
     ```
 
