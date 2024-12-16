@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Kamiwaza automount script for Azure VMs
-# Version: 1.2
+# Version: 1.3
 
 # PRESERVED: Original header and variable definitions
 set -eo pipefail
@@ -313,10 +313,12 @@ handle_scratch_mounts() {
 
 is_partitioned() {
     local disk=$1
-    if [[ $disk == /dev/nvme* ]]; then
-        [[ -b "${disk}p1" ]]
+    local real_disk=$(readlink -f "$disk")
+    
+    if [[ $real_disk == /dev/nvme* ]]; then
+        [[ -b "${real_disk}p1" ]]
     else
-        [[ -b "${disk}1" ]]
+        [[ -b "${real_disk}1" ]]
     fi
 }
 
@@ -333,9 +335,21 @@ safe_partition() {
                 return 0
             fi
             
-            sudo parted "$disk" mklabel gpt
-            sudo parted "$disk" mkpart primary ext4 0% 100%
-            sleep 2  # Give the system some time to recognize the new partition
+            # Create new GPT partition table and primary partition with -s flag to prevent prompts
+            if ! sudo parted -s "$disk" mklabel gpt; then
+                error_log "Failed to create GPT label on $disk"
+                return 1
+            fi
+            
+            if ! sudo parted -s "$disk" mkpart primary ext4 0% 100%; then
+                error_log "Failed to create partition on $disk"
+                return 1
+            fi
+
+            # Force kernel to reread partition table
+            sudo partprobe "$disk"
+            sleep 2  # Give system time to recognize new partition
+            
             if ! is_partitioned "$disk"; then
                 error_log "Failed to partition $disk"
                 return 1
@@ -344,6 +358,7 @@ safe_partition() {
     else
         log "$disk is already partitioned. Skipping partitioning."
     fi
+    return 0
 }
 
 has_filesystem() {
@@ -418,7 +433,11 @@ safe_mkfs() {
             log "DEBUG: Current mounts:"
             findmnt | grep -E "^$partition|^${partition%[0-9]}" || true
             
-            sudo mkfs.ext4 "$partition"
+            # Add -F to force formatting without prompting
+            if ! sudo mkfs.ext4 -F "$partition"; then
+                error_log "Failed to create filesystem on $partition"
+                return 1
+            fi
             
             log "Format completed, waiting for partition..."
             wait_for_partition "$partition" || {
