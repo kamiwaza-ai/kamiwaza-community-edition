@@ -129,7 +129,7 @@ These will be deprecated in a later version when we release the docs engine.
 
 ## LICENSE
 
-This software is (c) 2023-2024 Matthew Wallace, all rights reserved
+This software is (c) 2023-2024 Kamiwaza Corp, all rights reserved
 
 SOFTWARE LICENSE AGREEMENT FOR KAMIWAZA COMMUNITY EDITION
 
