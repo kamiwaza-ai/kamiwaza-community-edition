@@ -56,6 +56,9 @@ These will be deprecated in a later version when we release the docs engine.
 ### 0.3.2
 
 * Authentication merged into community edition with JWT enforcement on all endpoints
+
+    * Note: the default login is **admin** / **kamiwaza**
+  
 * SSL is now required on all endpoints (self-signed certificates are supported)
 * JupyterLab now uses Kamiwaza authentication instead of lab tokens
 * Improved SSL configuration and rotation handling for model endpoints
