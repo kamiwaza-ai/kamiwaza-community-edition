@@ -42,6 +42,7 @@ sudo chown -R $(whoami):staff ~/.docker
     curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
     export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
     [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+    # Add these to your .bashrc file to have auto load
     nvm install 21
     ```
 
@@ -75,6 +76,17 @@ bash startup/kamiwazad.sh start
 ## Troubleshooting
 
 - Mentioned in the doc, but remember to log out/in after adding to the docker group
+- Potential error in the `passlib` library for bcrypt
+    - [passlib](https://foss.heptapod.net/python-libs/passlib) hasn't been updated in a few years, if you run into the error about property `__about__` not existing
+    - patch file ~/.pyenv/versions/kamiwaza/lib/python3.10/site-packages/passlib/handlers/bcrypt.py
+        - adjust path to match your environment
+    - line 620 
+        - from
+	        - version = _bcrypt.__about__.__version__
+        - to
+    		- version = _bcrypt.__version__
+- If the final step in running `admin_db_reset.py` fails you can run the commands manually through a console
+
 
 ## Additional Notes
 
