@@ -20,6 +20,8 @@ Want pictures? Check the [showcase](showcase.md)!
 
 ## Full Installation Instructions
 
+[Install instructions for OSX](INSTALL-OSX.md) - thanks Alvin!
+
 We now have [full installation instructions](INSTALL.md) for the Kamiwaza Community Edition for Linux that go step-by-step from a fresh system for every pre-requisite.
 
 ## Quick Intro
