@@ -16,7 +16,7 @@ This thread originated from our discord on our #community-edition-support channe
 ### brew
 	 1. install brew
 		 - /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-	 2. brew install pyenv docker
+	 2. brew install pyenv pyenv-virtualenv docker cairo gobject-introspection
 
 ### dependencies
 ```
@@ -31,9 +31,21 @@ sudo chown -R $(whoami):staff ~/.docker
 ```
 
 ### pyenv
+To configure your shell environment to auto load pyenv
+```bash
+echo 'export PATH="$HOME/.pyenv/bin:$PATH"' >> ~/.zshrc
+echo 'eval "$(pyenv init -)"' >> ~/.zshrc
+echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.zshrc
+source ~/.zshrc
+```
+Replace `.zshrc` to match your shell environment_
+
 	 1. pyenv install 3.10
 	 2. pyenv virtualenv 3.10 kamiwaza
 	 3. pyenv activate kamiwaza
+
+#### 3.10 is a specific requirement for kamiwaza
+
 ### Node.js and NVM
 
 1. Install NVM and Node.js:
@@ -53,7 +65,7 @@ sudo chown -R $(whoami):staff ~/.docker
     ```bash
     mkdir kamiwaza
     cd kamiwaza
-    wget https://github.com/kamiwaza-ai/kamiwaza-community-edition/raw/main/kamiwaza-community-0.3.2-OSX.tar.gz
+    curl -L -O https://github.com/kamiwaza-ai/kamiwaza-community-edition/raw/main/kamiwaza-community-0.3.2-OSX.tar.gz
     tar -xvf kamiwaza-community-0.3.2-OSX.tar.gz
     bash install.sh --community
     ```
@@ -77,14 +89,16 @@ bash startup/kamiwazad.sh start
 
 - Mentioned in the doc, but remember to log out/in after adding to the docker group
 - Potential error in the `passlib` library for bcrypt
-    - [passlib](https://foss.heptapod.net/python-libs/passlib) hasn't been updated in a few years, if you run into the error about property `__about__` not existing
-    - patch file ~/.pyenv/versions/kamiwaza/lib/python3.10/site-packages/passlib/handlers/bcrypt.py
+    - [passlib](https://foss.heptapod.net/python-libs/passlib) hasn't been updated in a few years, if you run into an `AttributeError`
+        - `__about__` does not exist
+    - if you're attempting to install with python 3.11
+        - patch file ~/.pyenv/versions/kamiwaza/lib/python3.10/site-packages/passlib/handlers/bcrypt.py
         - adjust path to match your environment
-    - line 620 
-        - from
-	        - version = _bcrypt.__about__.__version__
-        - to
-    		- version = _bcrypt.__version__
+        - line 620 
+            - from
+	            - version = _bcrypt.__about__.__version__
+            - to
+    		    - version = _bcrypt.__version__
 - If the final step in running `admin_db_reset.py` fails you can run the commands manually through a console
 
 
