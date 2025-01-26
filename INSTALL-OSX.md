@@ -26,8 +26,9 @@ brew install cfssl etcd
 
 ### docker
 ```
-brew install docker docker-compose
+brew install docker --cask
 sudo chown -R $(whoami):staff ~/.docker
+open -a Docker
 ```
 
 ### pyenv
