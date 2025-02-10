@@ -117,7 +117,7 @@ This thread originated from our discord on our #community-edition-support channe
     ```bash
     mkdir kamiwaza
     cd kamiwaza
-    wget <kamiwaza package>
+    wget https://github.com/kamiwaza-ai/kamiwaza-community-edition/raw/main/kamiwaza-community-0.3.2-UbuntuLinux.tar.gz
     tar -xvf kamiwaza-community-0.3.2-UbuntuLinux.tar.gz
     bash install.sh --community
     ```
