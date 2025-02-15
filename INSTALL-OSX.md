@@ -42,8 +42,6 @@ source ~/.zshrc
 Replace `.zshrc` to match your shell environment_
 
 	 1. pyenv install 3.10
-	 2. pyenv virtualenv 3.10 kamiwaza
-	 3. pyenv activate kamiwaza
 
 #### 3.10 is a specific requirement for kamiwaza
 
