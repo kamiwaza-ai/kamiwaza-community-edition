@@ -55,6 +55,11 @@ Enterprise edition adds:
 
 These will be deprecated in a later version when we release the docs engine.
 
+### 0.3.3
+
+* Fixes to the installer, update to `llamacpp` version for OSX
+* Fixes to installer, `hostname` detection, update to `vLLM` version for Linux
+
 ### 0.3.2
 
 * Authentication merged into community edition with JWT enforcement on all endpoints
