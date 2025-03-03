@@ -65,8 +65,8 @@ Replace `.zshrc` to match your shell environment_
     ```bash
     mkdir kamiwaza
     cd kamiwaza
-    curl -L -O https://github.com/kamiwaza-ai/kamiwaza-community-edition/raw/main/kamiwaza-community-0.3.2-OSX.tar.gz
-    tar -xvf kamiwaza-community-0.3.2-OSX.tar.gz
+    curl -L -O https://github.com/kamiwaza-ai/kamiwaza-community-edition/raw/main/kamiwaza-community-0.3.3-OSX.tar.gz
+    tar -xvf kamiwaza-community-0.3.3-OSX.tar.gz
     bash install.sh --community
     ```
 
