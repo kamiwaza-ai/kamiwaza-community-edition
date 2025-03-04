@@ -6,6 +6,11 @@
 # PRESERVED: Original header and variable definitions
 set -eo pipefail
 
+if [ -f "$(dirname "${BASH_SOURCE[0]}")/.kamiwaza_install_community" ]; then
+    echo "=== Kamiwaza Community Edition detected, skipping mountlocal.sh"
+    exit 0
+fi
+
 # Define variables
 PRIMARY_MOUNT_POINT="/mnt"
 SECONDARY_MOUNT_POINT="/scratch"
