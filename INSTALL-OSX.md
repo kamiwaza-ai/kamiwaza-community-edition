@@ -21,7 +21,7 @@ This thread originated from our discord on our #community-edition-support channe
 ### dependencies
 ```
 brew install cockroachdb/tap/cockroach
-brew install cfssl etcd
+brew install cfssl etcd cmake
 ```
 
 ### docker
