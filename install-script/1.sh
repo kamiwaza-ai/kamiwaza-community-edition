@@ -50,14 +50,16 @@ if command -v ubuntu-drivers &> /dev/null; then
     echo "Ubuntu recommends driver version: $RECOMMENDED_DRIVER"
 fi
 
+# ... existing code ...
+
 # If recommended driver is empty or less than 550, install 550
 if [ -z "$RECOMMENDED_DRIVER" ] || [ "$RECOMMENDED_DRIVER" -lt 550 ]; then
     echo "Recommended driver ($RECOMMENDED_DRIVER) is below 550 or not found, installing nvidia-driver-550-server..."
     sudo apt install -y nvidia-driver-550-server
 else
-    # If it's 550 or higher, let ubuntu-drivers do its thing
-    echo "Recommended driver version ($RECOMMENDED_DRIVER) is 550 or higher, letting ubuntu-drivers choose..."
-    sudo ubuntu-drivers install --gpgpu
+    # Install the specific detected recommended driver instead of using ubuntu-drivers install
+    echo "Installing explicitly recommended driver version: nvidia-driver-${RECOMMENDED_DRIVER}..."
+    sudo apt install -y "nvidia-driver-${RECOMMENDED_DRIVER}-server"
     
     # Check if any NVIDIA driver was actually installed
     if ! dpkg -l | grep -q "nvidia-driver-"; then
