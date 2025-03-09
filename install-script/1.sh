@@ -5,7 +5,6 @@ set -ex
 sudo apt update
 export DEBIAN_FRONTEND=noninteractive
 sudo apt upgrade -y
-unset DEBIAN_FRONTEND
 
 # Install Python 3.10 and necessary libraries
 sudo apt install -y python3.10 python3.10-dev libpython3.10-dev python3.10-venv golang-cfssl python-is-python3 etcd-client net-tools
@@ -49,8 +48,6 @@ if command -v ubuntu-drivers &> /dev/null; then
     RECOMMENDED_DRIVER=$(ubuntu-drivers devices 2>/dev/null | grep "nvidia-driver-" | grep "recommended" | grep -o -E 'nvidia-driver-[0-9]+' | head -n 1 | cut -d'-' -f3)
     echo "Ubuntu recommends driver version: $RECOMMENDED_DRIVER"
 fi
-
-# ... existing code ...
 
 # If recommended driver is empty or less than 550, install 550
 if [ -z "$RECOMMENDED_DRIVER" ] || [ "$RECOMMENDED_DRIVER" -lt 550 ]; then
