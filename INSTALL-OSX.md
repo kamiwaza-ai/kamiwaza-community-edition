@@ -16,7 +16,7 @@ This thread originated from our discord on our #community-edition-support channe
 ### brew
 	 1. install brew
 		 - /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-	 2. brew install pyenv pyenv-virtualenv docker cairo gobject-introspection
+	 2. brew install pyenv pyenv-virtualenv docker cairo gobject-introspection jq
 
 ### dependencies
 ```

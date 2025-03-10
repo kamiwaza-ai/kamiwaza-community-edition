@@ -25,7 +25,7 @@ This thread originated from our discord on our #community-edition-support channe
 2. Install Python 3.10 and necessary libraries:
 
     ```bash
-    sudo apt install -y python3.10 python3.10-dev libpython3.10-dev python3.10-venv golang-cfssl python-is-python3 etcd-client net-tools
+    sudo apt install -y python3.10 python3.10-dev libpython3.10-dev python3.10-venv golang-cfssl python-is-python3 etcd-client net-tools jq
     ```
 
 ### Node.js and NVM
