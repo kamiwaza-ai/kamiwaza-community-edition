@@ -7,7 +7,7 @@ export DEBIAN_FRONTEND=noninteractive
 sudo apt upgrade -y
 
 # Install Python 3.10 and necessary libraries
-sudo apt install -y python3.10 python3.10-dev libpython3.10-dev python3.10-venv golang-cfssl python-is-python3 etcd-client net-tools
+sudo apt install -y python3.10 python3.10-dev libpython3.10-dev python3.10-venv golang-cfssl python-is-python3 etcd-client net-tools jq
 
 # This is now done by install.sh - leaving temporarily in memoriam
 # curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
