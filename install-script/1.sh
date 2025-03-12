@@ -2,6 +2,12 @@
 set -ex
 # Update and upgrade the system packages
 
+# TODO:
+# while sudo fuser /var/lib/dpkg/lock >/dev/null 2>&1 || sudo fuser /var/lib/apt/lists/lock >/dev/null 2>&1; do
+#   echo "Waiting for other package managers to finish..."
+#   sleep 5
+# done
+
 sudo apt update
 export DEBIAN_FRONTEND=noninteractive
 sudo apt upgrade -y
