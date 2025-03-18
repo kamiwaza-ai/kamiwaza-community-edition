@@ -8,7 +8,7 @@ See license at the bottom.
 
 [0.3.3 OSX](https://github.com/kamiwaza-ai/kamiwaza-community-edition/raw/main/kamiwaza-community-0.3.3-OSX.tar.gz)
 
-[0.3.2 Linux](https://github.com/kamiwaza-ai/kamiwaza-community-edition/raw/main/kamiwaza-community-0.3.2-UbuntuLinux.tar.gz)
+[0.3.3 Linux](https://github.com/kamiwaza-ai/kamiwaza-community-edition/raw/main/kamiwaza-community-0.3.3-UbuntuLinux.tar.gz)
 
 ## Discord
 
