@@ -108,7 +108,7 @@ This thread originated from our discord on our #community-edition-support channe
     mkdir kamiwaza
     cd kamiwaza
     wget <kamiwaza package>
-    tar -xvf kamiwaza-community-0.3.2-UbuntuLinux.tar.gz
+    tar -xvf kamiwaza-community-0.3.3-UbuntuLinux.tar.gz
     bash install.sh --community
     ```
 
