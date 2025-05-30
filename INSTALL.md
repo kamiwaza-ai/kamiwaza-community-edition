@@ -124,6 +124,9 @@ As of 0.3.2:
 bash startup/kamiwazad.sh start
 ```
 
+- Kamiwaza Web Console: https://localhost
+	- Default Username: admin
+	- Default Password: kamiwaza
 
 
 ## Troubleshooting
