@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Kamiwaza automount script for Azure VMs
-# Version: 1.3
+# Version: 1.4
 
 # PRESERVED: Original header and variable definitions
 set -eo pipefail
