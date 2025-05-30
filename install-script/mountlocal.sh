@@ -28,6 +28,11 @@ LARGEST_SCRATCH_DISK=""
 LARGEST_SCRATCH_SIZE=0
 SCRATCH_COUNT=1
 
+if [ "$UID" -eq 0 ]; then
+    error_log "This script should be run as the kamiwaza install user, not root"
+    exit 1
+fi
+
 declare -a ACTIONS_TAKEN=()
 # Add this at the start of the script with other global vars
 declare -a MOUNTED_DEVICES=()
@@ -1040,6 +1045,19 @@ get_disk_size() {
     echo $((size / 1024 / 1024))
 }
 
+disable_swap_on_disk() {
+    local disk=$1            # e.g. /dev/sdc
+    local majmin
+    majmin=$(stat -c '%t:%T' "$disk")
+
+    while read -r _ swapdev _; do
+        if [ "$(stat -c '%t:%T' "$swapdev")" = "$majmin" ]; then
+            echo "[mountlocal] swapoff $swapdev"
+            sudo swapoff "$swapdev"
+        fi
+    done < <(awk 'NR>1 {print $1}' /proc/swaps)
+}
+
 # Function to prepare and mount a disk
 prepare_and_mount_disk() {
     local disk=$1
@@ -1054,6 +1072,14 @@ prepare_and_mount_disk() {
     # 2. Blacklist check and persistence exception
     local real_disk=$(readlink -f "$disk")
     real_disk=$(echo "$real_disk" | sed 's/[0-9]*$//')  # Strip partition number
+
+    # one hyper-active check to avoid touching important disks
+    if findmnt -rno TARGET "$real_disk" | egrep -q '^(/|/boot|/boot/efi)$'; then
+        error_log "Refusing to operate on a disk that backs the OS or boot partition: $real_disk"
+        return 1
+    fi
+
+    disable_swap_on_disk "$real_disk"
     
     local is_persistence=false
     if [ "$mount_point" = "$KAMIWAZA_MOUNT_POINT" ] && [ "$real_disk" = "$(readlink -f "$PERSISTENCE_DISK")" ]; then
