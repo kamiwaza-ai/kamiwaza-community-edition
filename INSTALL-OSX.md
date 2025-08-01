@@ -83,7 +83,21 @@ As of 0.3.2:
 bash startup/kamiwazad.sh start
 ```
 
+### Managing Kamiwaza Services
 
+Once Kamiwaza is running, you can manage the services using the following commands:
+
+**Check Service Status:**
+```bash
+bash startup/kamiwazad.sh status
+```
+This command will display the current status of all Kamiwaza services, showing which components are running, stopped, or experiencing issues. Use this to verify that your installation is working correctly or to troubleshoot any problems.
+
+**Stop Services:**
+```bash
+bash startup/kamiwazad.sh stop
+```
+This command gracefully shuts down all Kamiwaza services. Use this when you need to stop the system for maintenance, updates, or to free up system resources. Always use this command rather than forcefully killing processes to ensure data integrity.
 
 ## Troubleshooting
 
