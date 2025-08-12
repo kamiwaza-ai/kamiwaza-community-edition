@@ -25,7 +25,7 @@ This thread originated from our discord on our #community-edition-support channe
 2. Install Python 3.10 and necessary libraries:
 
     ```bash
-    sudo apt install -y python3.10 python3.10-dev libpython3.10-dev python3.10-venv golang-cfssl python-is-python3 etcd-client net-tools jq
+    sudo apt install -y python3.10 python3.10-dev libpython3.10-dev python3.10-venv golang-cfssl python-is-python3 etcd-client net-tools curl jq
     ```
 
 ### Node.js and NVM
@@ -99,6 +99,16 @@ This thread originated from our discord on our #community-edition-support channe
     ```bash
     docker run --rm --gpus all nvidia/cuda:12.4.1-runtime-ubuntu22.04 nvidia-smi
     ```
+    If succesful, the docker commmand above should result in printing out the results of the `nvidia-smi` command (which shows all detected GPUs), and then exits and returns to your terminal immediately.
+
+    If you encounter `docker: permission denied while trying to connect to the Docker daemon` errors:
+    * Verify the docker service is running (`systemctl status docker`)
+    * Verify your user is a member of the docker group (`groups username`)
+    
+    If all the checks above are ok and you've already logged out and back in after `sudo usermod -aG docker $USER` above, but the permission errors persist, then do a full reboot.
+
+
+     
 
 ### Kamiwaza Installation
 
@@ -107,8 +117,8 @@ This thread originated from our discord on our #community-edition-support channe
     ```bash
     mkdir kamiwaza
     cd kamiwaza
-    wget <kamiwaza package>
-    tar -xvf kamiwaza-community-0.3.3-UbuntuLinux.tar.gz
+    wget https://github.com/kamiwaza-ai/kamiwaza-community-edition/raw/main/kamiwaza-community-0.3.2-UbuntuLinux.tar.gz
+    tar -xvf kamiwaza-community-0.3.2-UbuntuLinux.tar.gz
     bash install.sh --community
     ```
 
@@ -132,7 +142,7 @@ bash startup/kamiwazad.sh start
 ## Troubleshooting
 
 - For issues related to secure boot and MOK enrollment, refer to the system documentation for guidance.
-- Mentioned in the doc, but remember to log out/in after adding to the docker group
+- Mentioned in the doc, but remember to log out/in after adding to the docker group, and if just logging out and back in doesn't work, try a reboot.
 
 ## Additional Notes
 
