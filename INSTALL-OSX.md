@@ -16,12 +16,12 @@ This thread originated from our discord on our #community-edition-support channe
 ### brew
 	 1. install brew
 		 - /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-	 2. brew install pyenv pyenv-virtualenv docker cairo gobject-introspection
+	 2. brew install pyenv pyenv-virtualenv docker cairo gobject-introspection jq
 
 ### dependencies
 ```
 brew install cockroachdb/tap/cockroach
-brew install cfssl etcd
+brew install cfssl etcd cmake
 ```
 
 ### docker
@@ -42,8 +42,7 @@ source ~/.zshrc
 Replace `.zshrc` to match your shell environment_
 
 	 1. pyenv install 3.10
-	 2. pyenv virtualenv 3.10 kamiwaza
-	 3. pyenv activate kamiwaza
+     2. pyenv local 3.10
 
 #### 3.10 is a specific requirement for kamiwaza
 
@@ -66,8 +65,8 @@ Replace `.zshrc` to match your shell environment_
     ```bash
     mkdir kamiwaza
     cd kamiwaza
-    curl -L -O https://github.com/kamiwaza-ai/kamiwaza-community-edition/raw/main/kamiwaza-community-0.3.2-OSX.tar.gz
-    tar -xvf kamiwaza-community-0.3.2-OSX.tar.gz
+    curl -L -O https://github.com/kamiwaza-ai/kamiwaza-community-edition/raw/main/kamiwaza-community-0.3.3-OSX.tar.gz
+    tar -xvf kamiwaza-community-0.3.3-OSX.tar.gz
     bash install.sh --community
     ```
 
@@ -84,6 +83,9 @@ As of 0.3.2:
 bash startup/kamiwazad.sh start
 ```
 
+- Kamiwaza Web Console: https://localhost
+	- Default Username: admin
+	- Default Password: kamiwaza
 
 
 ## Troubleshooting

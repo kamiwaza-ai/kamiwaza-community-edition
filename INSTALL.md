@@ -25,7 +25,7 @@ This thread originated from our discord on our #community-edition-support channe
 2. Install Python 3.10 and necessary libraries:
 
     ```bash
-    sudo apt install -y python3.10 python3.10-dev libpython3.10-dev python3.10-venv golang-cfssl python-is-python3 etcd-client net-tools curl
+    sudo apt install -y python3.10 python3.10-dev libpython3.10-dev python3.10-venv golang-cfssl python-is-python3 etcd-client net-tools curl jq
     ```
 
 ### Node.js and NVM
@@ -134,6 +134,9 @@ As of 0.3.2:
 bash startup/kamiwazad.sh start
 ```
 
+- Kamiwaza Web Console: https://localhost
+	- Default Username: admin
+	- Default Password: kamiwaza
 
 
 ## Troubleshooting
