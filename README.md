@@ -6,9 +6,9 @@ See license at the bottom.
 
 ## Raw Download Links
 
-[0.3.2 OSX](https://github.com/kamiwaza-ai/kamiwaza-community-edition/raw/main/kamiwaza-community-0.3.2-OSX.tar.gz)
+[0.3.3 OSX](https://github.com/kamiwaza-ai/kamiwaza-community-edition/raw/main/kamiwaza-community-0.3.3-OSX.tar.gz)
 
-[0.3.2 Linux](https://github.com/kamiwaza-ai/kamiwaza-community-edition/raw/main/kamiwaza-community-0.3.2-UbuntuLinux.tar.gz)
+[0.3.3 Linux](https://github.com/kamiwaza-ai/kamiwaza-community-edition/raw/main/kamiwaza-community-0.3.3-UbuntuLinux.tar.gz)
 
 ## Discord
 
@@ -54,6 +54,11 @@ Enterprise edition adds:
 ## Kamiwaza Community Edition Release Notes
 
 These will be deprecated in a later version when we release the docs engine.
+
+### 0.3.3
+
+* Fixes to the installer, update to `llamacpp` version for OSX
+* Fixes to installer, `hostname` detection, update to `vLLM` version for Linux
 
 ### 0.3.2
 
