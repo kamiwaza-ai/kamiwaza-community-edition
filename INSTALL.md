@@ -1,5 +1,9 @@
 # Kamiwaza Installation Guide on Ubuntu 22.04LTS
 
+### Version
+
+Partially updated for Kamiwaza `0.5.0`
+
 This document outlines the steps to install Kamiwaza on a vanilla Ubuntu 22.04LTS server. The instructions are tested against a fresh Azure Ubuntu 22.04LTS Server (not Minimal) instance, and are intended to be executed on a fresh system.
 
 ## Discord
@@ -36,7 +40,7 @@ This thread originated from our discord on our #community-edition-support channe
     curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
     export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
     [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
-    nvm install 21
+    nvm install 22
     ```
 
 ### Docker and Docker Compose
@@ -44,13 +48,14 @@ This thread originated from our discord on our #community-edition-support channe
 1. Install Docker and Docker Compose:
 
     ```bash
-    sudo apt install -y apt-transport-https ca-certificates curl software-properties-common
-    curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
-    echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-    sudo apt update
-    sudo apt install -y docker-ce docker-ce-cli containerd.io
-    sudo curl -L "https://github.com/docker/compose/releases/download/v2.24.6/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-    sudo chmod +x /usr/local/bin/docker-compose
+	sudo apt install -y apt-transport-https ca-certificates curl software-properties-common
+	curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+	echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+	sudo apt update
+	sudo apt install -y docker-ce docker-ce-cli containerd.io
+	sudo mkdir -p /usr/local/lib/docker/cli-plugins
+	sudo curl -SL "https://github.com/docker/compose/releases/download/v2.39.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/lib/docker/cli-plugins/docker-compose
+	sudo chmod +x /usr/local/lib/docker/cli-plugins/docker-compose
     ```
 
 ### Additional Dependencies
@@ -58,14 +63,16 @@ This thread originated from our discord on our #community-edition-support channe
 1. Install CockroachDB and other dependencies:
 
     ```bash
-    wget -qO- https://binaries.cockroachdb.com/cockroach-v23.1.17.linux-amd64.tgz | tar xvz
-    sudo cp cockroach-v23.1.17.linux-amd64/cockroach /usr/local/bin
+    wget -qO- https://binaries.cockroachdb.com/cockroach-v23.2.12.linux-amd64.tgz | tar xvz
+    sudo cp cockroach-v23.2.12.linux-amd64/cockroach /usr/local/bin
     sudo apt install -y libcairo2-dev libgirepository1.0-dev
     ```
 
 ### NVIDIA Drivers and Docker Configuration
 
 1. Install NVIDIA drivers and configure Docker to use NVIDIA GPUs:
+
+   ### **NOTE**: A TODO is to update this
 
     ```bash
     sudo apt install -y nvidia-driver-550-server
@@ -76,7 +83,7 @@ This thread originated from our discord on our #community-edition-support channe
 
     ![Secure Boot](images/secureboot.png)
 
-2. Add the NVIDIA Docker repository and install the NVIDIA container toolkit:
+3. Add the NVIDIA Docker repository and install the NVIDIA container toolkit:
 
     ```bash
     curl -fsSL https://nvidia.github.io/libnvidia-container/gpgkey | sudo gpg --dearmor -o /usr/share/keyrings/nvidia-container-toolkit-keyring.gpg \
