@@ -1,5 +1,9 @@
 # Kamiwaza Installation Guide on Ubuntu 22.04LTS
 
+### Version
+
+Partially updated for Kamiwaza `0.5.0`
+
 This document outlines the steps to install Kamiwaza on a vanilla Ubuntu 22.04LTS server. The instructions are tested against a fresh Azure Ubuntu 22.04LTS Server (not Minimal) instance, and are intended to be executed on a fresh system.
 
 ## Discord
