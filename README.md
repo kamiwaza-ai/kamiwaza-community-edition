@@ -25,8 +25,8 @@ Enterprise adds multi‑node orchestration, scaled multi‑model deployments, SS
 
 ## Downloads (latest)
 
-- macOS (0.5.0): https://github.com/kamiwaza-ai/kamiwaza-community-edition/raw/main/kamiwaza-community-0.5.0-OSX.tar.gz
-- Ubuntu 22.04 LTS (0.5.0): https://github.com/kamiwaza-ai/kamiwaza-community-edition/raw/main/kamiwaza-community-0.5.0-UbuntuLinux.tar.gz
+- macOS (0.5.0): [link](https://github.com/kamiwaza-ai/kamiwaza-community-edition/raw/main/kamiwaza-community-0.5.0-OSX.tar.gz)
+- Ubuntu 22.04 LTS (0.5.0): [link](https://github.com/kamiwaza-ai/kamiwaza-community-edition/raw/main/kamiwaza-community-0.5.0-UbuntuLinux.tar.gz)
 
 ## Installation and Quickstart
 
