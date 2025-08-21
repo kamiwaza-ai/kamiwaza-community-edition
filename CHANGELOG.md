@@ -4,7 +4,42 @@ Notable changes to Kamiwaza Community Edition. For full documentation, see the d
 
 ## 0.5.0
 
-TBD
+### Highlights
+- **App Garden (compose-driven apps) + Tool Shed (curated tools)**: Launch apps and developer tools from curated templates with a new server module (`kamiwaza/serving/garden/*`) and default templates under `static/garden/default/*`. Frontend includes App Garden and Tool Shed UIs (browse, preview, deploy).
+- **Debian/Ubuntu .deb installer (Linux)**: One-command install with automated dependency management and systemd integration; brings a `kamiwaza` CLI for managing services.
+- **New React frontend**: Modern UI for auth, models, cluster, vector DBs, and App Garden. Comes with Jest + RTL tests and a streamlined dev setup.
+- **Serving engines**: Added **MLX (Apple Silicon)** engine; major  **VLLM** and **Llama.cpp** engine improvements, better VRAM estimation, and container log capture.
+- **Traefik integration**: More reliable automatic route management with extensive unit/integration/E2E tests.
+
+### Added
+- **Novice Mode + Model Guide**: Guided flows and docs to help first-time users deploy and test models quickly.
+- **Startup supervisor**: `startup/kamiwazad.sh` (`kamiwaza <command>` on Linux deb install and WSL) manages all core services with a single command.
+- **Container logging**: New APIs and utilities to view model container logs from the UI.
+
+### Changed
+- **Unified Python package layout (breaking)**: Everything now lives under `kamiwaza/*` (e.g., `services.*` → `kamiwaza.services.*`, `serving.*` → `kamiwaza.serving.*`, `util.*` → `kamiwaza.util.*`).
+- **Frontend**: New `frontend/` app with clearer structure, consistent Webpack/Jest config, and improved routing/auth.
+
+### Fixed/Improved
+- **Stability**: Ray startup hardening, resilient streaming responses, port availability checks.
+- **Model workflows**: More reliable downloads, cancellation, deployment status, and log pattern alerts.
+- **Security**: Improved defaults (e.g., non-root containers where applicable) and safer UI rendering.
+
+### Removed
+- **Legacy duplicates and sample datasets**: Old `serving/*` and `services/*` duplicates removed; large sample datasets pruned to keep the repo lean.
+
+### Breaking changes
+- **Import paths**: Update imports to the new layout under `kamiwaza/*`.
+- If you maintain external scripts/plugins, review renamed modules in `kamiwaza.serving.*` and `kamiwaza.services.*`.
+
+### Upgrade notes
+- **Rebuild and restart**: Rebuild images and run `startup/kamiwazad.sh start`.
+- **Frontend**: Use the new `frontend/` package (`npm install`, `npm run dev`).
+- **Traefik**: Validate routes with the included tests; new dynamic config is in deployment assets.
+- If you persisted custom integrations, search for old imports and move to `kamiwaza/*`.
+
+### Documentation
+- Expanded docs at https://docs.kamiwaza.ai
 
 ## 0.3.3
 
