@@ -1,3 +1,7 @@
+<div align="center">
+  <img src="images/Kamiwaza-Logo.png" alt="Kamiwaza Logo" />
+</div>
+
 # Kamiwaza Community Edition
 
 Orchestrate Autonomous AI. Everywhere.
@@ -30,9 +34,9 @@ For full macOS and Linux tarball installation instructions and usage documentati
 
 https://docs.kamiwaza.ai
 
-## Screenshots and showcase
+## Take a look
 
-Want pictures? See the [showcase](showcase.md).
+Want pictures? See the [Quickstart documentation](https://docs.kamiwaza.ai/quickstart).
 
 ## Security
 
