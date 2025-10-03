@@ -2,6 +2,40 @@
 
 Notable changes to Kamiwaza Community Edition. For full documentation, see the docs site: https://docs.kamiwaza.ai
 
+## 0.5.1
+
+### New Features
+
+- **Enterprise Logging**: Advanced observability with OpenTelemetry infrastructure
+- **Unified Logging**: New logs viewer with filtering and container log management
+- **AI Framework**: Comprehensive coding assistance tools and knowledge base
+- **App Garden**: Shinobi bench benchmarking capabilities
+- **Enhanced Monitoring**: Better health checks and system visibility
+
+### Improvements
+
+- WSL support for cross-platform GPU detection
+- Improved system stability and performance
+- Better error handling and user feedback
+- Enhanced cross-platform compatibility
+- Streamlined dependency management
+
+### Bug Fixes
+
+- Fixed Docker installation issues
+- Resolved Ray startup failures
+- Fixed system stability problems
+- Corrected various compatibility issues
+- Improved error reporting
+
+### Documentation
+
+- Enhanced troubleshooting guides
+- Better user documentation
+- Improved setup instructions
+- Clearer error messages
+
+
 ## 0.5.0
 
 ### Highlights
