@@ -27,12 +27,17 @@ Enterprise adds multi‑node orchestration, scaled multi‑model deployments, SS
 
 - macOS (0.5.1): [link](https://github.com/kamiwaza-ai/kamiwaza-community-edition/raw/main/kamiwaza-community-0.5.1-OSX.tar.gz)
 - Ubuntu 22.04 LTS (0.5.1): [link](https://github.com/kamiwaza-ai/kamiwaza-community-edition/raw/main/kamiwaza-community-0.5.1-UbuntuLinux.tar.gz)
+- Windows 11 (WSL2 w/ Ubuntu 24.04) x86_64 (0.5.1): [link](https://packages.kamiwaza.ai/win/kamiwaza_installer_0.5.1_x86_64.msi)
 
 ## Installation and Quickstart
 
 For full macOS and Linux tarball installation instructions and usage documentation, see our docs site:
 
-https://docs.kamiwaza.ai
+https://docs.kamiwaza.ai/installation/linux_macos_tarball
+
+And for full windows MSI installation, 
+
+https://docs.kamiwaza.ai/installation/windows_installation_guide
 
 ## Take a look
 

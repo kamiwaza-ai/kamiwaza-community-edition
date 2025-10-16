@@ -11,6 +11,7 @@ Notable changes to Kamiwaza Community Edition. For full documentation, see the d
 - **AI Framework**: Comprehensive coding assistance tools and knowledge base
 - **App Garden**: Shinobi bench benchmarking capabilities
 - **Enhanced Monitoring**: Better health checks and system visibility
+- **Windows Installer**: Featuring a WSL2-based Windows MSI installer (supports modern RTXs & Intel Arc Series GPU)
 
 ### Improvements
 
