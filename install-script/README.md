@@ -1,4 +1,14 @@
-# scripted install
+# ⚠️ Legacy Installation Scripts
+
+**These scripts are legacy and no longer recommended.**
+
+For the latest and most reliable installation methods (Debian/Ubuntu .deb, RHEL .rpm, macOS tarball, Windows MSI), please visit our official documentation:
+
+👉 **[docs.kamiwaza.ai/installation](https://docs.kamiwaza.ai/installation/installation_process)**
+
+---
+
+# scripted install (Legacy)
 
 These scripts are relatively lightly tested, but we have run them multiple times on Azure Canonical Ubuntu 22.04LTS-Server instances.
 
