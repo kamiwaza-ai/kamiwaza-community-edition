@@ -6,12 +6,12 @@
 
 **Orchestrate Autonomous AI. Everywhere.**
 
-Kamiwaza Community Edition is the enterprise-grade **AI orchestration platform** for developers. It provides the tools to manage the entire lifecycle of AI models and applications — from data ingestion and vectorization to model serving and monitoring — on your local or remote machine.
+Kamiwaza Community Edition is the enterprise-grade **AI orchestration platform** for developers. It provides the tools to manage the entire lifecycle of AI models, data, and applications — from data ingestion and vectorization to model serving and monitoring — on your local or remote machine.
 
 ## 🚀 Key Features
 
 - **AI Orchestration**: Unified management for models, vector databases, and application deployment.
-- **Universal Inference**: Run state-of-the-art AI models from Hugging Face on NVIDIA, Apple Silicon, or Intel Arc.
+- **Universal Inference**: Run state-of-the-art AI models from Hugging Face on NVIDIA, AMD ROCm, Apple Silicon, Intel, and more.
 - **Distributed Data Engine**: Built-in pipelines for unstructured data ingestion, processing, and vectorization.
 - **App Garden**: Launch full-stack AI apps in seconds.
 - **Enterprise-Grade Security**: OAuth/SAML authentication, role-based access control, and TLS encryption for single-node deployments.
